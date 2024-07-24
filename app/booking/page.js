@@ -4,21 +4,20 @@ import BookingSlotModal from "@/componants/BookingSlotModal";
 import { bookingSlots } from "@/contant/BookingSlots";
 import { ErrorMessage } from "@hookform/error-message";
 import { useState } from "react";
-import { Controller, useForm } from "react-hook-form";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Controller, useForm } from "react-hook-form";
 import "../../styles/booking/booking.css";
 
 export default function Booking() {
   const [show, setShow] = useState(false);
   const [timeSlotData, setTimeSlotData] = useState({});
-  console.log("timeSlotData", timeSlotData);
+
   const {
     register,
     handleSubmit,
     control,
-    reset,
     formState: { errors },
   } = useForm({ mode: "onSubmit" });
 
@@ -38,7 +37,7 @@ export default function Booking() {
           </Card.Title>
         </Col>
         <Col xl={9} lg={12}>
-          <Form name="loginForm" onSubmit={handleSubmit(onSubmit)}>
+          <Form name="bookingForm" onSubmit={handleSubmit(onSubmit)}>
             <Row>
               <Col>
                 <Form.Group className="mb-4 d-flex align-items-center">
@@ -83,12 +82,20 @@ export default function Booking() {
                             id={timeSlot.id}
                             className="time-check-box pe-2"
                             value={timeSlot.time}
+                            disabled={timeSlot?.available}
                             {...register("timeSlot", {
                               required: "This field is required",
                             })}
                           />
                           <Form.Label htmlFor={timeSlot.id} className="w-100">
-                            <Card className="booking-slot-card">
+                            <Card
+                              className={classNames(
+                                timeSlot?.available
+                                  ? "bg-success text-white"
+                                  : "bg-white text-dark",
+                                "p-2"
+                              )}
+                            >
                               <Card.Text className="booking-time">
                                 {timeSlot?.time}
                               </Card.Text>
@@ -126,7 +133,6 @@ export default function Booking() {
       <BookingSlotModal
         show={show}
         handleClose={handleClose}
-        reset={reset}
         data={timeSlotData}
       />
     </Container>

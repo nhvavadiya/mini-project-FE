@@ -7,7 +7,7 @@ export const bookingSlots = [
   {
     id: 2,
     time: "8:30 AM to 9:00 AM",
-    available: true,
+    available: false,
   },
   {
     id: 3,
@@ -17,12 +17,12 @@ export const bookingSlots = [
   {
     id: 4,
     time: "9:30 AM to 10:00 AM",
-    available: true,
+    available: false,
   },
   {
     id: 5,
     time: "10:30 AM to 11:00 AM",
-    available: true,
+    available: false,
   },
   {
     id: 6,
@@ -32,12 +32,12 @@ export const bookingSlots = [
   {
     id: 7,
     time: "11:30 AM to 12:00 PM",
-    available: true,
+    available: false,
   },
   {
     id: 8,
     time: "12:00 PM to 12:30 PM",
-    available: true,
+    available: false,
   },
   {
     id: 9,
@@ -47,7 +47,7 @@ export const bookingSlots = [
   {
     id: 10,
     time: "1:30PM to 2:00 PM",
-    available: true,
+    available: false,
   },
   {
     id: 11,
@@ -57,12 +57,12 @@ export const bookingSlots = [
   {
     id: 12,
     time: "2:30 PM to 3:00 PM",
-    available: true,
+    available: false,
   },
   {
     id: 13,
     time: "3:00 PM to 3:30 PM",
-    available: true,
+    available: false,
   },
   {
     id: 14,
@@ -72,17 +72,17 @@ export const bookingSlots = [
   {
     id: 15,
     time: "4:00 PM to 4:30 PM",
-    available: true,
+    available: false,
   },
   {
     id: 16,
     time: "4:30 PM to 5:00 PM",
-    available: true,
+    available: false,
   },
   {
     id: 17,
     time: "5:00 PM to 5:30 PM",
-    available: true,
+    available: false,
   },
   {
     id: 18,
