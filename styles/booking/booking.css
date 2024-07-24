@@ -1,0 +1,12 @@
+.booking-slot-card {
+  border: 2px solid #d1d1d1;
+  padding: 10px;
+}
+
+.booking-slot-card .booking-time {
+  color: d1d1d1;
+}
+
+.form-check-input:checked + .form-label .booking-slot-card {
+  background-color: green;
+}
